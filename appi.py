@@ -57,27 +57,21 @@ def samsungS20():
   print("Nous pouvons suite à cela Pour le",Name,"vous proposez une Offre BoyguesTélecom",forfait,"\n")
 
 def check_phone():
-  if len(sys.argv) > 1:
-    if sys.argv[1] == "iphone":
-      if sys.argv[2] == "8":
-        iphoneHeight()
-      if sys.argv[2] == "13":
-        iphoneThirteen()
-    if sys.argv[1] == "samsung":
-      samsungS20()
-  else:
-    print("Vous discuter avec le Service client BouyguesTélécom de Whatsapp ;)\nSi vous voulez consulter nos téléphone disponible sur notre catalogue\nentrez le model du téléphone et nous vous indiquerons si le téléphone est disponible à la vente!\nToute les caractéristique du téléphone vous serons aussi communiqués :)")
-    print("pour une assistance plus poussée ou pour toute autres informations veuillez nous contactez au +33986010463")
-
+  print("le model du téléphone demandez n'est pas disponible dans notre catalogue")
 def main():
-  if len(sys.argv) == 2 :
-    if sys.argv[1] == "iphone" :
-      iphoneThirteen()
-      iphoneHeight()
-    elif sys.argv[1] == "samsung" :
-      samsungS20()
-    else :
-      return()
+  print("Vous discuter avec le Service client BouyguesTélécom de Whatsapp ;)\nSi vous voulez consulter nos téléphone disponible sur notre catalogue\nentrez le model du téléphone et nous vous indiquerons si le téléphone est disponible à la vente!\nToute les caractéristique du téléphone vous serons aussi communiqués :)")
+  print("pour une assistance plus poussée ou pour toute autres informations veuillez nous contactez au +33986010463")
+  téléphone = input()
+
+  if téléphone == "iphone" :
+    iphoneThirteen()
+    iphoneHeight()
+  elif téléphone == "iphone 8":
+    iphoneHeight()
+  elif téléphone == "iphone 13":
+    iphoneThirteen
+  elif téléphone == "samsung" :
+    samsungS20()
   else :
     check_phone()
   print("Avez vous un compte un compte client?")
@@ -88,12 +82,19 @@ def main():
     print("voulez vous un compte client ?")
     Want = input()
     if (Want == "oui"):
+      print("Entrez votre date d'anniversaire")
       bday = input()
+      print("Entrez votre département")
       bDep = input()
+      print("Entrez votre Adresse Mail")
       mail = input()
+      print("Entrez votre prenom")
       fN = input()
+      print("Entrez votre nom")
       ln = input()
+      print("Entrez votre numero de téléphone")
       pn = input()
+      print("ENtrez MR si vous etes un Homme ou MME si vous etes une Femme")
       genre = input()
     else:
       return()
