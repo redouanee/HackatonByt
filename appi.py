@@ -96,6 +96,7 @@ def main():
       pn = input()
       print("ENtrez MR si vous etes un Homme ou MME si vous etes une Femme")
       genre = input()
+      print("Votre compte à bien étais créer, veuillez vous connecter directement sur boygues télécom!")
     else:
       return()
 
