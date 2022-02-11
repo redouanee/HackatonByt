@@ -88,15 +88,26 @@ def main():
     print("voulez vous un compte client ?")
     Want = input()
     if (Want == "oui"):
-      birthday = input()
-      birthDepart = input()
-      emailAdresse = input()
-      firstName = input()
-      lastname = input()
-      phonenumber = input()
+      bday = input()
+      bDep = input()
+      mail = input()
+      fN = input()
+      ln = input()
+      pn = input()
       genre = input()
     else:
       return()
+
+  user_info = { 'birthDate' : bday,
+  'birthDepartement' : bDep,
+  'emailAdress' : mail,
+  'firstName' : fN,
+  'lastName' : ln,
+  'phoneNumber' : pn,
+  'title' : genre,
+  }
+
+  user_info = json.dumps(user_info)
 
 if __name__ == "__main__":
     main()
