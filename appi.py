@@ -7,15 +7,24 @@ import sys
 from requests.api import request
 
 url = "https://api.bouyguestelecom.fr/ventes/mur-produits?type=phone"
+url2 = "https://open.api.sandbox.bouyguestelecom.fr/ap4/customer-management/v1/customer-accounts"
 
 payload={}
 headers = {
   'Content-Type': 'application/json',
   'x-version': '4'
 }
+headers2 = {
+  'x-banc': 'ap23',
+  'x-version': '4',
+  'TrackerId': 'aaed2799-fbcc-318a-e4de-b183966c2a89',
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer at-0bece344-7983-4e2f-ad26-88fdcd877ed1'
+}
 
 response = requests.request("GET", url, headers=headers, data=payload)
 output = response.json()
+
 
 def iphoneHeight():
   Name = output['categories']['phone']['products']['4788']['name']
@@ -58,6 +67,7 @@ def check_phone():
       samsungS20()
   else:
     print("Vous discuter avec le Service client BouyguesTélécom de Whatsapp ;)\nSi vous voulez consulter nos téléphone disponible sur notre catalogue\nentrez le model du téléphone et nous vous indiquerons si le téléphone est disponible à la vente!\nToute les caractéristique du téléphone vous serons aussi communiqués :)")
+    print("pour une assistance plus poussée ou pour toute autres informations veuillez nous contactez au +33986010463")
 
 def main():
   if len(sys.argv) == 2 :
@@ -70,6 +80,23 @@ def main():
       return()
   else :
     check_phone()
+  print("Avez vous un compte un compte client?")
+  haveAcompte = input()
+  if (haveAcompte == "oui"):
+    return()
+  else :
+    print("voulez vous un compte client ?")
+    Want = input()
+    if (Want == "oui"):
+      birthday = input()
+      birthDepart = input()
+      emailAdresse = input()
+      firstName = input()
+      lastname = input()
+      phonenumber = input()
+      genre = input()
+    else:
+      return()
 
 if __name__ == "__main__":
     main()
